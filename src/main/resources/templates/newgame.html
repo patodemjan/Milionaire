@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Milionaire – New Game</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}"/>
+  <link rel="stylesheet" th:href="@{/css/newgame.css}"/>
+  <script th:src="@{/js/newgame.js}" defer></script>
+</head>
+<body>
+  <div class="newgame-container">
+    <header class="head">
+      <div class="titel">Milionaire</div>
+    </header>
+
+    <form method="get" action="/newgame" class="profile-form">
+      <label for="profileSelect">Vyber profil:</label>
+      <select name="profileId" id="profileSelect" onchange="this.form.submit()">
+        <option value="">-- Vyber profil --</option>
+        <option th:each="profile : ${profiles}"
+                th:value="${profile.id}"
+                th:text="${profile.field}"
+                th:selected="${profile.id == selectedProfileId}">
+        </option>
+      </select>
+    </form>
+
+    <div th:if="${questions != null}">
+      <form id="quizForm" onsubmit="return false;">
+        <div th:each="q, iterStat : ${questions}" class="question-container">
+          <p>
+            <b>Otázka [[${iterStat.index + 1}]]:</b>
+            <span th:text="${q.question}">Text otázky</span>
+          </p>
+          <div class="answers">
+            <label>
+              <input type="radio"
+                     th:name="'answer-' + ${q.id}"
+                     value="A"
+                     th:attr="data-qid=${q.id},data-answer='A',data-correct=${q.correct}"
+                     onchange="checkAnswer(this.dataset.qid,this.dataset.answer,this.dataset.correct)"/>
+              A. <span th:text="${q.optionA}">Odpoveď A</span>
+            </label>
+            <label>
+              <input type="radio"
+                     th:name="'answer-' + ${q.id}"
+                     value="B"
+                     th:attr="data-qid=${q.id},data-answer='B',data-correct=${q.correct}"
+                     onchange="checkAnswer(this.dataset.qid,this.dataset.answer,this.dataset.correct)"/>
+              B. <span th:text="${q.optionB}">Odpoveď B</span>
+            </label>
+            <label>
+              <input type="radio"
+                     th:name="'answer-' + ${q.id}"
+                     value="C"
+                     th:attr="data-qid=${q.id},data-answer='C',data-correct=${q.correct}"
+                     onchange="checkAnswer(this.dataset.qid,this.dataset.answer,this.dataset.correct)"/>
+              C. <span th:text="${q.optionC}">Odpoveď C</span>
+            </label>
+            <label>
+              <input type="radio"
+                     th:name="'answer-' + ${q.id}"
+                     value="D"
+                     th:attr="data-qid=${q.id},data-answer='D',data-correct=${q.correct}"
+                     onchange="checkAnswer(this.dataset.qid,this.dataset.answer,this.dataset.correct)"/>
+              D. <span th:text="${q.optionD}">Odpoveď D</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="counter">
+          Správne odpovede: <span id="correctCount">0</span><br/>
+          Nesprávne odpovede: <span id="incorrectCount">0</span>
+        </div>
+      </form>
+    </div>
+
+    <div th:if="${questions == null or #lists.isEmpty(questions)}">
+      <p>Žiadne otázky pre tento profil</p>
+    </div>
+
+    <div class="main">
+      <a th:href="@{/index}" class="button">Hlavné menu</a>
+    </div>
+  </div>
+</body>
+</html>

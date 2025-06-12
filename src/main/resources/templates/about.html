@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milionaire</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+	<link rel="stylesheet" th:href="@{/css/about.css}">
+</head>
+<body>
+    <header class="head"><div class="titel">Milionaire</div></header>
+    <div class="about">
+    
+    <p>
+        This web-based game is inspired by the classic "Who Wants to Be a Millionaire" quiz show.
+        It challenges players with a series of multiple-choice questions, testing both knowledge and strategy.
+    
+        The game was developed using Spring Boot for the backend and Thymeleaffor rendering dynamic HTML content.
+    </p>
+	<br>
+    <p>
+        Created with passion and attention to detail by Patrik Demjan.
+    <div class="main">
+        <a th:href="@{/index}" class="button" style="margin-top: 5%;">Main menu</a>
+    </div>
+
+</body>
+</html>

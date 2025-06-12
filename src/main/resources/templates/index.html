@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milionaire</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <header class="head"><div class="titel">Milionaire</div></header>
+    
+<div class="buttons">
+    <a th:href="@{/newgame}" class="button">New game</a>
+    <a th:href="@{/createprofile}" class="button">Create field</a>
+    <a th:href="@{/setgame}" class="button">Set game</a>
+    <a th:href="@{/about}" class="button">About</a>
+    <a th:href="@{/exit}" class="button">Exit</a>
+</div>
+
+</body>
+</html>

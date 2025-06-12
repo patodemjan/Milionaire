@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Set Game</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/setgame.css}" />
+</head>
+<body>
+<header class="head">
+    <div class="titel">Milionaire</div>
+</header>
+
+<div class="setgame-container">
+    <form th:action="@{/setgame}" method="post" th:object="${gameForm}" id="gameForm">
+        <label for="profile">Choose profile:</label>
+        <select id="profile" name="profileId" th:field="*{profileId}" required onchange="loadQuestions(this)">
+            <option value="">-- Select --</option>
+            <option th:each="profile : ${profiles}" 
+                    th:value="${profile.id}" 
+                    th:data-limit="${profile.questionCount}" 
+                    th:text="${profile.field}">
+            </option>
+        </select>
+
+        <div class="question-navigation">
+            <button type="button" onclick="prevQuestion()">←</button>
+            <span id="questionLabel">Question 1</span>
+            <button type="button" onclick="nextQuestion()">→</button>
+        </div>
+
+        <!-- Tu sa dynamicky vykreslia vstupné polia -->
+        <div class="question-form"></div>
+
+        <button type="submit" class="button">Save Question</button>
+    </form>
+	<div class="main">
+	    <a th:href="@{/index}" class="button">Main menu</a>
+	</div>
+
+</div>
+
+
+<!-- JavaScript na konci -->
+<script th:src="@{/js/setgame.js}"></script>
+</body>
+</html>

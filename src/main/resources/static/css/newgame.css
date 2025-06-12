@@ -1,0 +1,53 @@
+/* Kontajner s obsahom novej hry */
+.newgame-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Profilový formulár */
+.profile-form {
+  margin-bottom: 2rem;
+}
+.profile-form select {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+/* Každá otázka */
+.question-container {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 6px;
+  color: #fff;
+}
+
+/* Odpovede */
+.answers label {
+  display: block;
+  margin: 0.5rem 0;
+}
+.answers input {
+  margin-right: 0.5rem;
+}
+
+/* Počítadlo výsledkov */
+.counter {
+  margin-top: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Tlačidlo späť */
+.main {
+  margin-top: 3rem;
+}
+.main .button {
+  padding: 0.75rem 2rem;
+}

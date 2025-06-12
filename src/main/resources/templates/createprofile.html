@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milionaire</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/createprofile.css}">
+</head>
+<body>
+<header class="head">
+    <div class="titel">Milionaire</div>
+</header>
+
+<div class="table">
+    <!-- Formulár na vytvorenie profilu -->
+    <form th:action="@{/createprofile}" method="post" class="form-row">
+        <label for="name">Field</label>
+        <input type="text" id="name" name="field" required/>
+
+        <label for="questionCount">Questions (max 30):</label>
+        <input type="number" id="questionCount" name="questionCount" min="1" max="30" required/>
+
+        <button type="submit" class="button-link">Create</button>
+    </form>
+
+    <!-- Tabuľka existujúcich profilov -->
+    <table class="profile-table">
+        <thead>
+        <tr>
+            <th>Field</th>
+            <th>Questions</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="profile : ${profiles}">
+            <td th:text="${profile.field}"></td>
+            <td th:text="${profile.questionCount}"></td>
+            <td>
+                <form th:action="@{/deleteprofile/{id}(id=${profile.id})}" method="post">
+                    <button type="submit" class="button-link">Delete</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+	<div class="buttonmainmenu">
+        <a th:href="@{/index}" class="button" style="margin-top: 10vh;">Main menu</a>
+    </div>
+</div>
+
+</body>
+</html>

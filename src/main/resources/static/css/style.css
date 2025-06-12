@@ -1,0 +1,47 @@
+body {
+    background: linear-gradient(to right, rgb(0, 64, 128), rgb(128, 0, 64));
+    margin: 0;
+    padding: 0;
+}
+.titel {
+    font-size: 10vh;
+    color: rgb(146, 138, 138);
+    text-align: center;
+    margin-top: 4vh;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+    margin-top: 2vh;
+    justify-content: center;
+    min-height: 60vh;
+}
+
+.button {
+    background: rgb(235, 235, 235);
+    color: #333;
+    border: none;
+    padding: 12px 32px;
+    min-width: 25vh;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    display: inline-block;
+}
+
+.button:hover {
+    background: rgb(192, 192, 192);
+    color: #222;
+}
+
+.giphy {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%; /* zabráni prekročeniu šírky obrazovky */
+}
