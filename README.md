@@ -8,7 +8,7 @@ Milionaire ist eine kleine Quiz-Webanwendung im Stil von „Wer wird Millionär�
 ### 🎯 Ziele
 Das Ziel dieses Spiels ist es, ein Quiz zu erstellen, das sich sehr gut für Unterrichtszwecke eignet und dabei hilft, neues Wissen aus bestimmten Bereichen zu erlernen oder besser einzuprägen.
 
-### 🛠️ Used Technologies
+### 🛠️ Technologien
 - **Java 17**  
 - **Spring Boot** (Web, Thymeleaf, Data JPA)  
 - **Thymeleaf** als Template-Engine  
@@ -41,7 +41,7 @@ http://localhost:8080
 - Zufälliges Quiz mit Zählung richtiger/­falscher Antworten
 
 
-## 📂 Projektová štruktúra / Project Structure
+## 📂 Projekt Struktur
 milionaire/
 │
 ├─ src/
@@ -85,5 +85,5 @@ milionaire/
 
 
 
-### ⚖️ Lizenz / License
+### ⚖️ Lizenz
 Dieses Projekt steht unter der MIT License.
