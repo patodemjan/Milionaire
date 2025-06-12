@@ -47,7 +47,7 @@ public class SetGameController {
                 gameForm.setQuestions(questions);
             }
         } else {
-            // Ak profil nie je vybraný, zobraz 5 prázdnych otázok
+            // view 4 empty questions + answer, if no profile is choose
             List<Question> emptyQuestions = new ArrayList<>();
             for (int i = 0; i < 5; i++) {
                 emptyQuestions.add(new Question());

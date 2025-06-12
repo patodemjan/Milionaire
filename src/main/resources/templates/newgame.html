@@ -16,9 +16,9 @@
     </header>
 
     <form method="get" action="/newgame" class="profile-form">
-      <label for="profileSelect">Vyber profil:</label>
+      <label for="profileSelect">Choose profile:</label>
       <select name="profileId" id="profileSelect" onchange="this.form.submit()">
-        <option value="">-- Vyber profil --</option>
+        <option value="">-- Choose profile --</option>
         <option th:each="profile : ${profiles}"
                 th:value="${profile.id}"
                 th:text="${profile.field}"
@@ -31,8 +31,8 @@
       <form id="quizForm" onsubmit="return false;">
         <div th:each="q, iterStat : ${questions}" class="question-container">
           <p>
-            <b>Otázka [[${iterStat.index + 1}]]:</b>
-            <span th:text="${q.question}">Text otázky</span>
+            <b>Question [[${iterStat.index + 1}]]:</b>
+            <span th:text="${q.question}">Text of question</span>
           </p>
           <div class="answers">
             <label>
@@ -41,7 +41,7 @@
                      value="A"
                      th:attr="data-qid=${q.id},data-answer='A',data-correct=${q.correct}"
                      onchange="checkAnswer(this.dataset.qid,this.dataset.answer,this.dataset.correct)"/>
-              A. <span th:text="${q.optionA}">Odpoveď A</span>
+              A. <span th:text="${q.optionA}">Answer A</span>
             </label>
             <label>
               <input type="radio"
@@ -49,7 +49,7 @@
                      value="B"
                      th:attr="data-qid=${q.id},data-answer='B',data-correct=${q.correct}"
                      onchange="checkAnswer(this.dataset.qid,this.dataset.answer,this.dataset.correct)"/>
-              B. <span th:text="${q.optionB}">Odpoveď B</span>
+              B. <span th:text="${q.optionB}">Answer B</span>
             </label>
             <label>
               <input type="radio"
@@ -57,7 +57,7 @@
                      value="C"
                      th:attr="data-qid=${q.id},data-answer='C',data-correct=${q.correct}"
                      onchange="checkAnswer(this.dataset.qid,this.dataset.answer,this.dataset.correct)"/>
-              C. <span th:text="${q.optionC}">Odpoveď C</span>
+              C. <span th:text="${q.optionC}">Answer C</span>
             </label>
             <label>
               <input type="radio"
@@ -65,24 +65,24 @@
                      value="D"
                      th:attr="data-qid=${q.id},data-answer='D',data-correct=${q.correct}"
                      onchange="checkAnswer(this.dataset.qid,this.dataset.answer,this.dataset.correct)"/>
-              D. <span th:text="${q.optionD}">Odpoveď D</span>
+              D. <span th:text="${q.optionD}">Answer D</span>
             </label>
           </div>
         </div>
 
         <div class="counter">
-          Správne odpovede: <span id="correctCount">0</span><br/>
-          Nesprávne odpovede: <span id="incorrectCount">0</span>
+          Right answers: <span id="correctCount">0</span><br/>
+          Wrong answers: <span id="incorrectCount">0</span>
         </div>
       </form>
     </div>
 
     <div th:if="${questions == null or #lists.isEmpty(questions)}">
-      <p>Žiadne otázky pre tento profil</p>
+      <p>No questions awaible for this profile</p>
     </div>
 
     <div class="main">
-      <a th:href="@{/index}" class="button">Hlavné menu</a>
+      <a th:href="@{/index}" class="button">Main menu</a>
     </div>
   </div>
 </body>

@@ -17,18 +17,23 @@ import com.example.milionaire.milionaire.service.QuestionService;
 @Controller
 public class IndexController {
 
+	//generate private fields
 	private final ProfileRepository profileRepository;
     private final QuestionService questionService;
 
+    //generate constructor
     public IndexController(ProfileRepository profileRepository, QuestionService questionService) {
         this.profileRepository = profileRepository;
         this.questionService = questionService;
     }
 
+    //mapping for homepage
     @GetMapping({"/", "/home", "/index"})
     public String homePage(Model model) {
         return "index";
     }
+
+    //mapping for new game
 
     @GetMapping("/newgame")
     public String newGamePage(@RequestParam(value = "profileId", required = false) Long profileId, Model model) {
@@ -37,7 +42,7 @@ public class IndexController {
 
         if (profileId != null) {
             List<Question> questions = questionService.findByProfileId(profileId);
-            // Náhodné preusporiadanie otázok
+            // random questions
             java.util.Collections.shuffle(questions);
             model.addAttribute("selectedProfileId", profileId);
             model.addAttribute("questions", questions);
@@ -46,6 +51,8 @@ public class IndexController {
         return "newgame";
     }
 	
+    //mapping for set game
+
 	@RequestMapping("/setgame")
 	public String setGamePage(Model model) {
 	    model.addAttribute("gameForm", new GameForm());
@@ -53,16 +60,22 @@ public class IndexController {
 	    return "setgame";
 	}
     
+    //mapping for exit
+
     @RequestMapping("/exit")
     public String exit(Model model) {
         return "exit";
     }
     
+    //mapping for about this game
+
     @RequestMapping("/about")
     public String about(Model model) {
         return "about";
     }
     
+    //mapping for create game
+
     @RequestMapping("/createprofile")
     public String createprofile(Model model) {
         return "createprofile";

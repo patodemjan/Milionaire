@@ -5,10 +5,11 @@ import java.util.List;
 import com.example.milionaire.milionaire.entity.Question;
 
 public class GameForm {
-    private Long profileId;
-    private List<Question> questions; // pridaj getter/setter
+	//generate private fields
+	private Long profileId;
+    private List<Question> questions; 
 
-    // gettery/settery
+    // generate getters and setters
     public Long getProfileId() { return profileId; }
     public void setProfileId(Long profileId) { this.profileId = profileId; }
 

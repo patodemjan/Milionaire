@@ -9,29 +9,31 @@ import com.example.milionaire.milionaire.repository.ProfileRepository;
 
 @Service
 public class ProfileService {
-
+	
+	//generate private field
     private final ProfileRepository profileRepository;
 
+    //generate constructors
     public ProfileService(ProfileRepository profileRepository) {
         this.profileRepository = profileRepository;
     }
 
-    // Vráti všetky profily
+    // return all profiles
     public List<Profile> findAll() {
         return profileRepository.findAll();
     }
 
-    // Nájde profil podľa ID
+    // find profile by id
     public Profile findById(Long id) {
         return profileRepository.findById(id).orElse(null);
     }
 
-    // Uloží alebo aktualizuje profil
+    // save or update profile
     public Profile save(Profile profile) {
         return profileRepository.save(profile);
     }
 
-    // Odstráni profil podľa ID
+    // delete profile by id
     public void deleteById(Long id) {
         profileRepository.deleteById(id);
     }

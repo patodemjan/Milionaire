@@ -13,13 +13,15 @@ import com.example.milionaire.milionaire.repository.ProfileRepository;
 @Controller
 public class ProfileController {
 
+	//define private field
     private final ProfileRepository profileRepository;
 
+    //generate constructor
     public ProfileController(ProfileRepository profileRepository) {
         this.profileRepository = profileRepository;
     }
 
-    // Zobrazí createprofile.html s formulárom + tabuľkou
+    // view of create profile with table
     @GetMapping("/createprofile")
     public String showCreateProfileForm(Model model) {
         model.addAttribute("profile", new Profile());
@@ -27,7 +29,7 @@ public class ProfileController {
         return "createprofile"; // súbor createprofile.html
     }
 
-    // Uloží nový profil a zostáva na createprofile.html s aktualizovanou tabuľkou
+    // save profile + createprofile.html s updated table
     @PostMapping("/createprofile")
     public String submitCreateProfile(@ModelAttribute Profile profile, Model model) {
         if (profile.getQuestionCount() > 30) {
@@ -41,7 +43,7 @@ public class ProfileController {
         return "createprofile";
     }
 
-    // Odstráni profil podľa ID a presmeruje späť na createprofile.html
+    // delete profile by id and redirect to createprofile.html
     @PostMapping("/deleteprofile/{id}")
     public String deleteProfile(@PathVariable Long id) {
         profileRepository.deleteById(id);

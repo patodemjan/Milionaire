@@ -7,8 +7,10 @@ public class Question {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //private field, id is marked
     private Long id;
 
+    //generate private fields
     private String question;
     private String optionA;
     private String optionB;
@@ -20,7 +22,7 @@ public class Question {
     @JoinColumn(name = "profile_id")
     private Profile profile;
 
-    // Gettery a settery
+    // generate getters and setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
     public String getQuestion() { return question; }
