@@ -41,49 +41,5 @@ http://localhost:8080
 - Zufälliges Quiz mit Zählung richtiger/­falscher Antworten
 
 
-## 📂 Projekt Struktur
-milionaire/
-│
-├─ src/
-│  ├─ main/
-│  │  ├─ java/com/example/milionaire/
-│  │  │  ├─ controller/
-│  │  │  │   ├─ IndexController.java       # Handles "/", "/index", "/newgame", "/setgame"…
-│  │  │  │   ├─ ProfileController.java     # "/createprofile" + delete
-│  │  │  │   └─ SetGameController.java     # "/setgame" GET + POST
-│  │  │  ├─ entity/
-│  │  │  │   ├─ Profile.java               # JPA entity for profiles
-│  │  │  │   └─ Question.java              # JPA entity for questions
-│  │  │  ├─ form/
-│  │  │  │   └─ GameForm.java              # DTO for setgame form
-│  │  │  ├─ repository/
-│  │  │  │   ├─ ProfileRepository.java
-│  │  │  │   └─ QuestionRepository.java
-│  │  │  ├─ service/
-│  │  │  │   ├─ ProfileService.java
-│  │  │  │   └─ QuestionService.java
-│  │  │  └─ MilionaireApplication.java    # Spring Boot main class
-│  │  └─ resources/
-│  │     ├─ templates/
-│  │     │   ├─ index.html
-│  │     │   ├─ createprofile.html
-│  │     │   ├─ setgame.html
-│  │     │   └─ newgame.html
-│  │     └─ static/
-│  │        ├─ css/
-│  │        │   ├─ style.css
-│  │        │   ├─ setgame.css
-│  │        │   └─ newgame.css
-│  │        └─ js/
-│  │            ├─ setgame.js
-│  │            └─ newgame.js
-│  └─ test/
-│     └─ java/...                          # Optional unit tests
-│
-├─ pom.xml                               # Maven configuration
-└─ README.md                             # Project documentation
-
-
-
 ### ⚖️ Lizenz
 Dieses Projekt steht unter der MIT License.
