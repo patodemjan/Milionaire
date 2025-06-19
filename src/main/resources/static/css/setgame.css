@@ -1,4 +1,4 @@
-/* Základné nastavenia */
+/* Basics settings */
 body {
     background: linear-gradient(to right, rgb(0, 64, 128), rgb(128, 0, 64));
     margin: 0;
@@ -6,7 +6,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Nadpis */
+/* Title */
 .titel {
     font-size: 10vh;
     color: rgb(146, 138, 138);
@@ -14,7 +14,7 @@ body {
     margin-top: 4vh;
 }
 
-/* Kontajner */
+/* Container */
 .setgame-container {
     display: flex;
     flex-direction: column;
@@ -31,7 +31,7 @@ body {
     max-width: 800px;
 }
 
-/* Navigácia medzi otázkami */
+/* Nav for the questions */
 .question-navigation {
     display: flex;
     justify-content: center;
@@ -59,7 +59,7 @@ body {
     color: white;
 }
 
-/* Formulár na otázky */
+/* Questions formular */
 .question-form {
     display: flex;
     flex-direction: column;
@@ -72,7 +72,7 @@ body {
     box-sizing: border-box;
 }
 
-/* Vstupné polia */
+/* input fields */
 .question-form input[type="text"] {
     padding: 12px;
     border-radius: 6px;
@@ -83,7 +83,7 @@ body {
     text-align: center;
 }
 
-/* Tabuľka otázok */
+/* Table of questions */
 .question-table {
     width: 100%;
     border-collapse: collapse;
@@ -106,7 +106,7 @@ body {
     font-weight: bold;
 }
 
-/* Tlačidlá */
+/* buttons */
 .button {
     background: rgb(235, 235, 235);
     color: #333;

@@ -8,7 +8,7 @@
   box-sizing: border-box;
 }
 
-/* Profilový formulár */
+/* Formular of profile */
 .profile-form {
   margin-bottom: 2rem;
 }
@@ -17,7 +17,7 @@
   font-size: 1rem;
 }
 
-/* Každá otázka */
+/* All questions */
 .question-container {
   width: 100%;
   max-width: 600px;
@@ -28,7 +28,7 @@
   color: #fff;
 }
 
-/* Odpovede */
+/* Answers */
 .answers label {
   display: block;
   margin: 0.5rem 0;
@@ -37,14 +37,14 @@
   margin-right: 0.5rem;
 }
 
-/* Počítadlo výsledkov */
+/* Counter of results */
 .counter {
   margin-top: 1.5rem;
   font-weight: bold;
   color: #fff;
 }
 
-/* Tlačidlo späť */
+/* Button main menu */
 .main {
   margin-top: 3rem;
 }
